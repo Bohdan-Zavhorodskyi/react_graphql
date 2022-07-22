@@ -5,7 +5,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -14,14 +14,17 @@
     "noEmit": true,
     "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": "./src/",
+
     "paths": {
-      "components/*": ["./src/components/*"],
-      "graphql/*": ["./src/graphql/*"],
-      "pages/*": ["./src/pages/*"],
-      "services/*": ["./src/services/*"],
-      "types/*": ["./src/types/*"],
-      "context/*": ["./src/context/*"]
+      "components*": ["components*"],
+      "graphql*": ["graphql*"],
+      "pages*": ["pages*"],
+      "services*": ["services*"],
+      "types*": ["types*"],
+      "context*": ["context*"]
     }
   },
-  "include": ["src"]
+  "exclude": ["node_modules"],
+  "include": ["src", "**/*.ts", "**/*.tsx"]
 }
