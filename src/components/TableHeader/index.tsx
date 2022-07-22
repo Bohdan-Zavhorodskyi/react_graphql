@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { Menu, Dropdown, Radio } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import { AppContext } from '../../service/FilterSettingsProvider';
-interface TableHeaderProps {
-  keys: string[];
-}
+
+import { AppContext } from 'context/FilterSettingsProvider';
+import { TableHeaderProps } from './types';
 
 const TableHeader: React.FC<TableHeaderProps> = ({ keys }) => {
   const { state, setState } = useContext<any>(AppContext);
@@ -16,7 +15,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({ keys }) => {
     'hermaphrodite',
     'none',
   ];
-  //нада пофіксить відображення списка радіо
+
   const filter = (
     <Menu>
       <Menu.Item>

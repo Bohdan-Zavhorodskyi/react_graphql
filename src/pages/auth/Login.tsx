@@ -2,13 +2,13 @@ import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useHistory } from 'react-router-dom';
 
-import * as AuthService from '../../service/AuthService';
+import { login } from '../../services/auth/AuthService';
 
 const Login = () => {
   const history = useHistory();
 
   const onFinish = () => {
-    AuthService.login();
+    login();
     history.push('/');
   };
 

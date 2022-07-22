@@ -1,4 +1,4 @@
-This project it`s a test task with using React + GraphQL.
+This project`s a test task using React + GraphQL.
 
 ## Description
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
-import * as AuthService from '../../service/AuthService';
+import { logout } from 'services/auth/AuthService';
 
 const { Header } = Layout;
 
@@ -10,7 +10,7 @@ const HeaderCustom = () => (
   <Header>
     <Menu theme="dark" mode="horizontal">
       <Menu.Item key="1">
-        <Link to="/login" onClick={AuthService.logout}>
+        <Link to="/login" onClick={logout}>
           Logout
         </Link>
       </Menu.Item>

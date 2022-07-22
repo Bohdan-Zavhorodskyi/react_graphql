@@ -3,9 +3,7 @@ import React from 'react';
 import TableBody from '../TableBody';
 import TableHeader from '../TableHeader';
 
-interface TableProps {
-  peoples: People[];
-}
+import { TableProps } from './types';
 
 const Table: React.FC<TableProps> = ({ peoples }) => {
   const keys = ['name', 'eyeColor', 'birthYear', 'skinColor'];

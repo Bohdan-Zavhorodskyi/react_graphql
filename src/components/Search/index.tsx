@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../service/FilterSettingsProvider';
-
 import { Input, Button } from 'antd';
+
+import { AppContext } from 'context/FilterSettingsProvider';
 
 const Search = () => {
   const { state, setState } = useContext<any>(AppContext);

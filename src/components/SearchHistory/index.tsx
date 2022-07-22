@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../../service/FilterSettingsProvider';
-
 import { Divider, List } from 'antd';
+
+import { AppContext } from 'context/FilterSettingsProvider';
 
 const SearchHistory = () => {
   const { state, setState } = useContext<any>(AppContext);

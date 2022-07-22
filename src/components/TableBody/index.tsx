@@ -1,8 +1,6 @@
 import React from 'react';
 
-interface TableBodyProps {
-  peoples: People[];
-}
+import { TableBodyProps } from './types';
 
 const TableBody: React.FC<TableBodyProps> = ({ peoples }) => {
   return (

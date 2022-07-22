@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import get from 'lodash/get';
 import { Spin, Space } from 'antd';
-import { AppContext } from '../../service/FilterSettingsProvider';
 
-import Search from '../../components/Search';
-import Table from '../../components/Table';
-import { GET_ALL_PEOPLE } from '../../graphql/queries';
-import SearchHistory from '../../components/SearchHistory';
+import { AppContext } from 'context/FilterSettingsProvider';
+import Search from 'components/Search';
+import Table from 'components/Table';
+import { GET_ALL_PEOPLE } from 'graphql/queries';
+import SearchHistory from 'components/SearchHistory';
 
 const ItemList = () => {
   const { state } = useContext(AppContext);
