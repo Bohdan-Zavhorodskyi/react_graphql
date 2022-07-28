@@ -1,9 +1,6 @@
-import React, { useState, createContext, Dispatch } from 'react';
+import React, { useState, createContext } from 'react';
 
-export interface AppContextProps {
-  state: ProviderProps;
-  setState: Dispatch<React.SetStateAction<ProviderProps>>;
-}
+import { AppContextProps, FilterSettingsProviderProps } from './types';
 
 const appCtxDefaultValue = {
   searchValue: '',
@@ -16,7 +13,9 @@ export const AppContext = createContext<AppContextProps>({
   setState: () => null,
 });
 
-export const AppProvider = (props: any) => {
+export const FilterSettingsProvider: React.FC<FilterSettingsProviderProps> = (
+  props
+) => {
   const [state, setState] = useState<ProviderProps>(appCtxDefaultValue);
 
   return (

@@ -4,7 +4,7 @@ import { Input, Button } from 'antd';
 import { AppContext } from 'context/FilterSettingsProvider';
 
 const Search = () => {
-  const { state, setState } = useContext<any>(AppContext);
+  const { state, setState } = useContext(AppContext);
   const [search, setSearch] = useState(state.searchValue);
 
   const handleSearch = () => {

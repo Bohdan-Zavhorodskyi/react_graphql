@@ -4,11 +4,9 @@ import { Divider, List } from 'antd';
 import { AppContext } from 'context/FilterSettingsProvider';
 
 const SearchHistory = () => {
-  const { state, setState } = useContext<any>(AppContext);
-  const filteredHistory = state.searchHistory.filter(
-    (item: any) => item !== ''
-  );
-  const setFilterValue = (value: any) => {
+  const { state, setState } = useContext(AppContext);
+  const filteredHistory = state.searchHistory.filter((item) => item !== '');
+  const setFilterValue = (value: string) => {
     setState((prev: ProviderProps) => ({ ...prev, searchValue: value }));
   };
 
@@ -18,7 +16,7 @@ const SearchHistory = () => {
       <List
         size="small"
         dataSource={filteredHistory}
-        renderItem={(item: any) => (
+        renderItem={(item) => (
           <List.Item
             className="history-item"
             onClick={() => setFilterValue(item)}

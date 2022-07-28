@@ -29,7 +29,7 @@ const App = () => {
             />
             <Route
               path="/"
-              element={<ProtectedRoute path="/" exact component={ItemList} />}
+              element={<ProtectedRoute path="/" component={ItemList} />}
             />
           </Routes>
         </Content>

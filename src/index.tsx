@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import { ApolloProvider } from '@apollo/client';
-import { AppProvider } from './context/FilterSettingsProvider';
+
+import { FilterSettingsProvider } from './context/FilterSettingsProvider';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import './index.css';
 
 import client from './graphql/client';
 import 'antd/dist/antd.css';
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <AppProvider>
+    <FilterSettingsProvider>
       <App />
-    </AppProvider>
+    </FilterSettingsProvider>
   </ApolloProvider>,
   document.getElementById('root')
 );

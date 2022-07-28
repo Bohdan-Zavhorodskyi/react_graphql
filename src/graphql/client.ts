@@ -10,7 +10,7 @@ const typeDefs = loader('./schema.graphql');
 const client = new ApolloClient({
   uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
   cache: new InMemoryCache({
-    dataIdFromObject: (object: any) => defaultDataIdFromObject(object),
+    dataIdFromObject: (object) => defaultDataIdFromObject(object),
   }),
   headers: {
     'Access-Control-Allow-Origin': '*',
