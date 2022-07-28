@@ -17,10 +17,11 @@ const App = () => (
       <HeaderCustom />
       <Content>
         <Routes>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <ProtectedRoute path="/" exact component={ItemList} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/"
+            element={<ProtectedRoute path="/" exact component={ItemList} />}
+          />
         </Routes>
       </Content>
     </Layout>
