@@ -14,7 +14,7 @@ const Login: React.FC<{ setAuth: Dispatch<boolean> }> = ({ setAuth }) => {
   };
 
   return (
-    <Form name="basic" initialValues={{ remember: true }} onFinish={onFinish}>
+    <Form name="basic" onFinish={onFinish} className="login-form">
       <Form.Item
         label="Username"
         name="username"
@@ -29,10 +29,6 @@ const Login: React.FC<{ setAuth: Dispatch<boolean> }> = ({ setAuth }) => {
         rules={[{ required: true, message: 'Please input your password!' }]}
       >
         <Input.Password />
-      </Form.Item>
-
-      <Form.Item name="remember" valuePropName="checked">
-        <Checkbox>Remember me</Checkbox>
       </Form.Item>
 
       <Form.Item>

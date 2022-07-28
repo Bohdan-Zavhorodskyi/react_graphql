@@ -99,3 +99,26 @@ li.ant-dropdown-menu-item:hover {
   color: #d3d2d2;
   text-decoration: underline;
 }
+
+.login-form.ant-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.login-form .ant-form-item {
+  width: 30%;
+}
+
+.login-form .ant-form-item-control-input-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* .login-form .ant-input {
+  width: 20%;
+} */
