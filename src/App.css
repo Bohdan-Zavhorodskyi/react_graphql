@@ -80,10 +80,28 @@ li.ant-dropdown-menu-item:hover {
   background-color: transparent;
 }
 
-.search {
+.search-input-wrapper {
   width: 30%;
   display: flex;
   margin: 15px auto;
+  position: relative;
+}
+
+.search-input-submit.ant-btn {
+  margin-left: 5px;
+}
+
+.search-input-reset {
+  position: absolute;
+  right: 82px;
+  top: 9px;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.search-input-reset:hover {
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {

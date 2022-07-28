@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Input, Button } from 'antd';
+import { CloseOutlined } from '@ant-design/icons';
 
 import { AppContext } from 'context/FilterSettingsProvider';
 
@@ -17,19 +18,39 @@ const Search = () => {
       searchHistory: newArr,
     }));
   };
+
+  const handleSearchReset = () => {
+    setSearch('');
+    setState((prev: ProviderProps) => ({
+      ...prev,
+      searchValue: '',
+    }));
+  };
+
   useEffect(() => {
     setSearch(state.searchValue);
   }, [state]);
 
   return (
-    <div className="search">
+    <div className="search-input-wrapper">
       <Input
         placeholder="type here"
         value={search}
         onChange={(e) => setSearch(e.currentTarget.value)}
         onPressEnter={handleSearch}
       />
-      <Button type="primary" htmlType="submit" onClick={handleSearch}>
+      {search && (
+        <CloseOutlined
+          className="search-input-reset"
+          onClick={handleSearchReset}
+        />
+      )}
+      <Button
+        type="primary"
+        htmlType="submit"
+        onClick={handleSearch}
+        className="search-input-submit"
+      >
         Search
       </Button>
     </div>
