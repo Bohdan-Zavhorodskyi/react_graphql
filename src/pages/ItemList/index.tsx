@@ -4,10 +4,10 @@ import get from 'lodash/get';
 import { Spin, Space } from 'antd';
 
 import { AppContext } from 'context/FilterSettingsProvider';
-import Search from 'components/Search';
-import Table from 'components/Table';
+import Search from 'components/Common/Search';
+import Table from 'components/Common/Table';
 import { GET_ALL_PEOPLE } from 'graphql/queries';
-import SearchHistory from 'components/SearchHistory';
+import SearchHistory from 'components/Common/SearchHistory';
 
 const ItemList = () => {
   const { state } = useContext(AppContext);

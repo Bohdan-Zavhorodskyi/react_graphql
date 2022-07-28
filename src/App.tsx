@@ -3,9 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from 'antd';
 
 import Login from './pages/auth/Login';
-import ProtectedRoute from './components/Common/ProtectRouter';
+import ProtectedRoute from './components/Layout/ProtectedRoute';
 import ItemList from './pages/ItemList';
-import HeaderCustom from './components/Header';
+import HeaderCustom from './components/Layout/Header';
 
 import './App.css';
 
