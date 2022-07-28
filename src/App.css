@@ -53,6 +53,16 @@
   text-transform: capitalize;
 }
 
+.column-name th {
+  text-align: start;
+}
+
+.filter-wrapper {
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+}
+
 .ant-list-split li.ant-list-item:last-child {
   border-bottom: 1px solid;
 }

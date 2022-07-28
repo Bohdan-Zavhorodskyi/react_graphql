@@ -1,5 +1,5 @@
 import React, { Dispatch } from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import { login } from '../../services/auth/AuthService';

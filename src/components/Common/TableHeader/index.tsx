@@ -6,7 +6,7 @@ import { AppContext } from 'context/FilterSettingsProvider';
 import { TableHeaderProps } from './types';
 
 const TableHeader: React.FC<TableHeaderProps> = ({ keys }) => {
-  const { state, setState } = useContext<any>(AppContext);
+  const { state, setState } = useContext(AppContext);
   const gendersArr = [
     'unfiltered',
     'male',
@@ -17,25 +17,23 @@ const TableHeader: React.FC<TableHeaderProps> = ({ keys }) => {
   ];
 
   const filter = (
-    <Menu>
-      <Menu.Item>
-        <Radio.Group
-          onChange={(e) =>
-            setState((prev: ProviderProps) => ({
-              ...prev,
-              filterValue: e.target.value,
-            }))
-          }
-          value={state.filterValue}
-        >
-          {gendersArr.map((gender, i) => (
-            <Radio key={i} value={gender}>
-              {gender}
-            </Radio>
-          ))}
-        </Radio.Group>
-      </Menu.Item>
-    </Menu>
+    <div className="filter-wrapper">
+      <Radio.Group
+        onChange={(e) =>
+          setState((prev: ProviderProps) => ({
+            ...prev,
+            filterValue: e.target.value as string,
+          }))
+        }
+        value={state.filterValue}
+      >
+        {gendersArr.map((gender, i) => (
+          <Radio key={i} value={gender}>
+            {gender}
+          </Radio>
+        ))}
+      </Radio.Group>
+    </div>
   );
 
   return (
