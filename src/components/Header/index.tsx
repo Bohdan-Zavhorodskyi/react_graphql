@@ -6,20 +6,26 @@ import { logout } from 'services/auth/AuthService';
 
 const { Header } = Layout;
 
-const HeaderCustom = () => (
-  <Header>
-    <Menu theme="dark" mode="horizontal">
-      <Menu.Item key="1">
+const HeaderCustom = () => {
+  const items = [
+    {
+      key: 1,
+      label: <Link to="/"> Main </Link>,
+    },
+    {
+      key: 2,
+      label: (
         <Link to="/login" onClick={logout}>
           Logout
         </Link>
-      </Menu.Item>
-
-      <Menu.Item key="2">
-        <Link to="/"> Main </Link>
-      </Menu.Item>
-    </Menu>
-  </Header>
-);
+      ),
+    },
+  ];
+  return (
+    <Header>
+      <Menu items={items} className="menu-content" />
+    </Header>
+  );
+};
 
 export default HeaderCustom;

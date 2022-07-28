@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.layout .ant-layout-content {
+  padding: 0 25px 0 25px;
+}

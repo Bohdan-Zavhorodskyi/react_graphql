@@ -80,3 +80,22 @@ li.ant-dropdown-menu-item:hover {
     transform: rotate(360deg);
   }
 }
+
+.menu-content.ant-menu {
+  display: flex;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-content .ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child {
+  background-color: transparent;
+}
+
+.menu-content .ant-menu-item a {
+  color: white;
+}
+
+.menu-content .ant-menu-item a:hover {
+  color: #d3d2d2;
+  text-decoration: underline;
+}
