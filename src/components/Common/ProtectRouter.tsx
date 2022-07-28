@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 
 import { isAuthenticated } from 'services/auth/AuthService';
 
@@ -11,11 +11,11 @@ const ProtectedRoute: React.FC<any> = ({ component: Component, ...rest }) => {
         isAuthenticated() === true ? (
           <Component {...props} />
         ) : (
-          <Redirect
+          <Navigate
             to={{
               pathname: '/login',
-              state: { from: props.location },
             }}
+            state={{ from: props.location }}
           />
         )
       }

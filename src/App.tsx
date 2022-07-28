@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from 'antd';
 
 import Login from './pages/auth/Login';
@@ -16,10 +16,12 @@ const App = () => (
     <Layout className="layout">
       <HeaderCustom />
       <Content>
-        <Switch>
-          <Route path="/login" component={Login} />
+        <Routes>
+          <Route path="/login">
+            <Login />
+          </Route>
           <ProtectedRoute path="/" exact component={ItemList} />
-        </Switch>
+        </Routes>
       </Content>
     </Layout>
   </BrowserRouter>
