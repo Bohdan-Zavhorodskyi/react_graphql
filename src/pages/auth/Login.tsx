@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import { login } from '../../services/auth/AuthService';
 
-const Login = () => {
+const Login: React.FC<{ setAuth: Dispatch<boolean> }> = ({ setAuth }) => {
   const history = useNavigate();
 
   const onFinish = () => {
     login();
+    setAuth(true);
     history('/');
   };
 

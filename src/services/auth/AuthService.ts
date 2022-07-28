@@ -3,15 +3,11 @@ export const login = () => {
 };
 
 export const isAuthenticated = () => {
-  if (window.localStorage.getItem('auth') == null) {
-    return false;
-  } else {
-    return true;
-  }
+  return !!window.localStorage.getItem('auth');
 };
 
 export const logout = () => {
-  if (window.localStorage.getItem('auth') != null) {
+  if (window.localStorage.getItem('auth')) {
     window.localStorage.removeItem('auth');
   }
 };

@@ -6,26 +6,35 @@ import Login from './pages/auth/Login';
 import ProtectedRoute from './components/Layout/ProtectedRoute';
 import ItemList from './pages/ItemList';
 import HeaderCustom from './components/Layout/Header';
+import { isAuthenticated } from 'services/auth/AuthService';
 
 import './App.css';
 
 const { Content } = Layout;
 
-const App = () => (
-  <BrowserRouter>
-    <Layout className="layout">
-      <HeaderCustom />
-      <Content>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/"
-            element={<ProtectedRoute path="/" exact component={ItemList} />}
-          />
-        </Routes>
-      </Content>
-    </Layout>
-  </BrowserRouter>
-);
+const App = () => {
+  const [isAuthorized, setIsAuthorized] = React.useState<boolean>(
+    isAuthenticated()
+  );
 
+  return (
+    <BrowserRouter>
+      <Layout className="layout">
+        <HeaderCustom isAuth={isAuthorized} setAuth={setIsAuthorized} />
+        <Content>
+          <Routes>
+            <Route
+              path="/login"
+              element={<Login setAuth={setIsAuthorized} />}
+            />
+            <Route
+              path="/"
+              element={<ProtectedRoute path="/" exact component={ItemList} />}
+            />
+          </Routes>
+        </Content>
+      </Layout>
+    </BrowserRouter>
+  );
+};
 export default App;
