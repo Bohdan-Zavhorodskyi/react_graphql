@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Menu, Dropdown, Radio } from 'antd';
+import { Dropdown, Radio } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
 import { AppContext } from 'context/FilterSettingsProvider';

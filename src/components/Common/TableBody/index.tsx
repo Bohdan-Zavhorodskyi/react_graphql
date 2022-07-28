@@ -7,11 +7,11 @@ const TableBody: React.FC<TableBodyProps> = ({ peoples }) => {
     <tbody>
       {peoples.map((people, i) => (
         <tr key={i}>
-          <td> {people.name}</td>
-          <td> {people.eyeColor}</td>
-          <td> {people.birthYear}</td>
-          <td> {people.skinColor}</td>
-          <td> {people.gender}</td>
+          <td className="table-cell"> {people.name}</td>
+          <td className="table-cell"> {people.eyeColor}</td>
+          <td className="table-cell"> {people.birthYear}</td>
+          <td className="table-cell"> {people.skinColor}</td>
+          <td className="table-cell"> {people.gender}</td>
         </tr>
       ))}
     </tbody>

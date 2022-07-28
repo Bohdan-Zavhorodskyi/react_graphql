@@ -57,6 +57,10 @@
   text-align: start;
 }
 
+.table-cell {
+  width: calc(100% / 5);
+}
+
 .filter-wrapper {
   background-color: white;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
